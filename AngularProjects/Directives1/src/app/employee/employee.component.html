@@ -1,0 +1,48 @@
+<br />
+<div class="col">
+  <h3>Employees Table</h3>
+
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Dept</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Action</th>
+        <!-- <th>Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!showEdit"></tr>
+      <tr appChangeColor *ngFor="let emp of emplist">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.First_Name }}</td>
+        <td>{{ emp.Last_Name }}</td>
+        <td>{{ emp.Dept }}</td>
+        <td>{{ emp.City }}</td>
+        <td>{{ emp.Email }}</td>
+        <td>
+          <a href="#" (click)="EditEmp()"> <img src="{{ editIcon }}" /> </a>
+        </td>
+      </tr>
+
+      <!-- <tr *ngIf="showEdit">
+        <td><input type="text" [(ngModel)]="emp.id" /></td>
+
+        <td><input type="text" [(ngModel)]="emp.First_Name" /></td>
+        <td><input type="text" [(ngModel)]="emp.Last_Name" /></td>
+        <td><input type="text" [(ngModel)]="emp.Dept" /></td>
+        <td><input type="text" [(ngModel)]="emp.City" /></td>
+        <td><input type="text" [(ngModel)]="emp.Email" /></td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="UpdateEmp()">
+            Update
+          </button>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
