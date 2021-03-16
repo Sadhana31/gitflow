@@ -1,0 +1,50 @@
+<form [formGroup]="formsModel" (ngSubmit)="OnSubmit" >
+        <div>
+            name:<input type="text" formControlName="name">
+            <div *ngIf="formsModel.controls['name'].touched && formsModel.controls['name'].invalid && formsModel.controls['name'].errors.required "> </div>
+            <p>name is touched</p>
+        </div><br/>
+
+        <div>
+            Age:<input type="number" formControlName="age">
+            <div *ngIf="formsModel.controls['age'].errors?.invalidAge">
+                    <p>age shound be in range</p>
+            
+           </div>
+        </div><br/>
+
+        <!-- <div>
+            SSN:<input type="text" formControlName="ssn">
+        </div><br/>
+
+        <div formGroupName="passwordGroup">
+            <div>
+                Password:<input type="password" formControlName="password">
+            </div><br/>
+            <div>
+                Confirm Password:<input type="password" formControlName="pconfirm">
+
+            </div><br/>
+
+        </div> -->
+        <button>Submit</button>
+
+</form>
+<!-- 
+<form [formGroup]="formsModel">
+    <div formGroupName="dateRange">
+        <input type="text" formControlName="from">
+        <input type="text" formControlName="to">
+    </div>
+
+    <div>
+        <ul formArrayName="emails">
+        <li *ngFor="let e of formsModel.get('emails').controls ; let i=index" >
+            email:<input [formControlName]=i/>
+        </li>
+    </ul>
+        <button>Add Email</button>
+
+    </div>
+
+</form> -->

@@ -1,0 +1,52 @@
+<div>
+    <form #f="ngForm">
+        <fieldset>
+            <label>UserName: </label>
+             <div>
+                <input type="text" name="username" #username="ngModel" ngModel required/>
+                 <div *ngIf="username.touched && username.invalid && username.errors?.required">
+                <p style="color:red;">Name is required </p>
+            </div>
+         </div>  
+        </fieldset> 
+
+        <fieldset>
+            <legend>Age: </legend>
+             <div>
+                <input type="number" name="age" #age="ngModel" ngModel min="20"/>
+                 <!-- <div *ngIf="age.touched && age.errors.min">
+                <p style="color:red;">Age required is 20 </p> -->
+            <!-- </div> -->
+         </div>  
+        </fieldset> 
+
+
+        <fieldset>
+            <label>Password: </label>
+             <div>
+                <input type="password" name="password" #password="ngModel" ngModel minlength="3" />
+                 <div *ngIf="password.touched && password.invalid && password.errors.minlength">
+                <p style="color:red;">Atleast 3 characters </p>
+            </div>
+         </div>  
+        </fieldset> 
+
+
+        <fieldset>
+            <label>Email: </label>
+             <div>
+                <input type="text" name="email" #email="ngModel" ngModel required email />
+                 <div *ngIf="email.touched && email.invalid && email.errors.required">
+                <p style="color:red;">Add email!!! </p>
+            </div>
+
+            <div *ngIf="email.touched && email.invalid && email.errors.email">
+                <p style="color:red;">Incorrext email!!! </p>
+            </div>
+         </div>  
+        </fieldset> 
+    </form>
+   
+
+
+</div>
